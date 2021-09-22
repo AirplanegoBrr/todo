@@ -37,6 +37,15 @@ This should prob be privite repo but its fine!
 [ ] Move hosting of bots to shity PC
 
 
-
 # School
 NA
+
+
+# Code-Servers
+## Please DONT try to login to my servers :D
+
+2052 - Main computer 
+
+2053 - Game server
+
+2054 - 2 core shit box
