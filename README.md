@@ -41,8 +41,8 @@ This should prob be privite repo but its fine!
 NA
 
 
-# Code-Servers
-## Please DONT try to login to my servers :D
+# Servers
+## CodeServers (dont try to login)
 
 2052 - Main computer 
 
