@@ -11,15 +11,15 @@ This should prob be privite repo but its fine!
 
 [ ] Website <-> Discord bot link (how???)
 
-## CloudExis LLC
+## [CloudExis LLC](https://cloudexis.us/)
 [ ] Get on Dev team
 
-## tophatDevs
+## [tophatDevs](https://github.com/TophatDevs)
 [ ] Work on website more
 
 [ ] talk with the boys to see what we should make together
 
-## My API
+## [My API](http://airplanegobrr.us.to:5000)
 [ ] Fix up file fetching and shit bc dirct paths are dumb
 
 [ ] Add google/discord OAUTH (most likly gonna go for google?)
