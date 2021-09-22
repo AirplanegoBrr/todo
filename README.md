@@ -49,3 +49,12 @@ NA
 2053 - Game server
 
 2054 - 2 core shit box
+
+
+## Websites
+
+80 - Localhost only :(
+
+5000 - My main website
+
+5001 - My brothers PC
