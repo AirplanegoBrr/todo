@@ -9,7 +9,7 @@ This should prob be privite repo but its fine!
 
 [ ] Work on website 
 
-[ ] Website <-> Discord bot link (how???)
+[ ] Website <-> Discord bot link (how???) (not sure what this means ngl lol)
 
 ## [CloudExis LLC](https://cloudexis.us/)
 [ ] Get on Dev team
