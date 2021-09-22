@@ -32,7 +32,7 @@ This should prob be privite repo but its fine!
 ## Other
 [ ] Work on todo list
 
-[ ] Make file sync between code-servers?
+[ ] Make file sync between code-servers? (how???)
 
 [ ] Move hosting of bots to shity PC
 
