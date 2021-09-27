@@ -14,8 +14,8 @@ This should prob be privite repo but its fine!
 ## [CloudExis LLC](https://cloudexis.us/)
 [ ] Get on Dev team
 
-## ~~[tophatDevs](https://github.com/TophatDevs)
-[ ] Work on website more~~
+## ~~[tophatDevs](https://github.com/TophatDevs)~~
+~~[ ] Work on website more~~
 
 ~~[ ] talk with the boys to see what we should make together~~
 
