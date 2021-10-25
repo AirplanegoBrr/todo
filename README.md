@@ -52,14 +52,14 @@ N/A
 NA
 
 
-# Servers
+# Port Fowards
 ## CodeServers (dont try to login)
 
-2052 - Main computer 
+2052 - Main computer (use STFP over ssh instend!)
 
-2053 - Game server
+~~2053 - Game server~~ replaced SSH instend and use STFP
 
-2054 - 2 core shit box
+2054 - 2 core box (keeps shuting down for no reason??)
 
 
 ## Websites
@@ -67,8 +67,6 @@ NA
 80 - Localhost only :(
 
 3000 - My main website
-
-5001 - My brothers PC
 
 ## SSH
 
@@ -78,4 +76,16 @@ NA
 
 @@20 - Wing2
 
-22 - VPS
+@2 - VPS
+
+## pterodactyl
+
+80 - VPS (not on network)
+
+5001 - Wing1 demon
+
+5002 - Wing1 STFP
+
+5003 - Wing2 demon
+
+5004 - Wing2 STFP
