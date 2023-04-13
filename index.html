@@ -38,26 +38,18 @@
         <div class="sidebar">
             <!-- Reference: https://www.gethalfmoon.com/docs/sidebar -->
 
-            <div class="sidebar-menu">
+            <div class="sidebar-menu" id="tasks">
                 <!-- Sidebar content with the search box -->
                 <div class="sidebar-content">
-                    <h1>E</h1>
-                    <input type="text" class="form-control" placeholder="Text input">
-                    <button class="btn btn-success" type="button">Create T</button><button class="btn btn-secondary" type="button">Create G</button>
+                    <h1>Todo app</h1>
+                    <input type="text" class="form-control" placeholder="Text input" id="m-i">
+                    <button class="btn btn-success" type="button" id="m-t">Create T</button>
+                    <button class="btn btn-secondary" type="button" id="m-g">Create G</button>
                 </div>
 
-                <!-- First collapse panel -->
-                <details class="collapse-panel"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
-                    <summary class="collapse-header">
-                        
-                    </summary>
-                    <div class="collapse-content">
-                        
-                    </div>
-                </details>
-
                 <!-- Second collapse panel (open by default) -->
-                <details class="collapse-panel w-250 mt-5" open>
+                
+                <details class="collapse-panel w-250 mt-5">
                     <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100%, mt-20 = margin-top: 2rem (20px) -->
                     <summary class="collapse-header">
                         <p>Text haha</p>
@@ -68,10 +60,13 @@
                                 <button class="btn btn-success z-10" type="button">T</button>
                                 <button class="btn btn-secondary z-10" type="button">G</button>
                                 <button class="btn btn-danger z-10" type="button">E</button>
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox-1" value="">
+                                    <label for="checkbox-1">E</label>
+                                </div>
                             </div>
                             <div class="row">
-                                The condor is the most efficient animal, whereas human beings have a rather unimpressive showing.
-                                Given a bicycle however, human beings become far more efficient, easily topping the chart, blowing the condor away.
+                                <h1>List</h1>
                             </div>
                         </div>
                         
@@ -98,5 +93,130 @@
     <!-- Halfmoon JS -->
     <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 </body>
+
+<script defer>
+    const sizes = [
+        25,
+        50,
+        100,
+        150,
+        200,
+        250,
+        300,
+        350,
+        400,
+        450,
+        500,
+        550,
+        600
+    ]
+    function findClosestNumber(inputNum, numArray = sizes) {
+  let minDiff = Number.MAX_SAFE_INTEGER;
+  let closestIndex = -1;
+
+  for (let i = 0; i < numArray.length; i++) {
+    let diff = Math.abs(inputNum - numArray[i]);
+    if (diff < minDiff) {
+      minDiff = diff;
+      closestIndex = i;
+    }
+  }
+
+  return numArray[closestIndex];
+}
+
+    const helper = {
+        makers: {
+            createButton: (parentElm) => {
+                const taskButton = document.createElement("button");
+                taskButton.classList.value = "btn btn-success z-10"
+                taskButton.type = "button";
+                taskButton.innerHTML = "T"
+
+                const groupButton = document.createElement("button");
+                groupButton.classList.value = "btn btn-secondary z-10"
+                groupButton.type = "button";
+                groupButton.innerHTML = "G"
+
+                const editButton = document.createElement("button");
+                editButton.classList.value = "btn btn-danger z-10"
+                editButton.type = "button";
+                editButton.innerHTML = "E"
+
+                parentElm.append(taskButton, groupButton, editButton);
+            },
+            
+            createTask: (parentElm, data) => {
+            },
+
+            createList: (parentElm, groupName) => {
+            },
+
+            createGroup: (parentElm, groupName, groupID) => {
+                var width = parentElm.clientWidth
+                var widthToUse = findClosestNumber(width)-100
+                // get closest size to the list
+                console.log(parentElm, width, widthToUse)
+                
+                const details = document.createElement("details");
+                details.setAttribute("open", true);
+                details.classList.value = `collapse-panel w-${widthToUse} mt-5`
+                details.id = groupID
+
+                const summary = document.createElement("summary")
+                summary.classList.add("collapse-header")
+                summary.innerText = groupName
+
+                const div1 = document.createElement("div")
+                div1.classList.add("collapse-content")
+
+                const div2 = document.createElement("div")
+                div2.classList.add("container-fluid")
+
+                const row1 = document.createElement("div") // Buttons
+                row1.classList.add("row")
+                console.log(row1)
+                helper.makers.createButton(row1)
+
+                const row2 = document.createElement("div") // Content
+                row2.classList.add("row")
+
+                div2.append(row1,row2)
+                div1.append(div2)
+                details.append(summary, div1)
+                parentElm.append(details)
+                return {
+                    added: details,
+                    content: row2
+                }
+            },
+            
+        },
+        load: (data, elm = tasks) => {
+            for (var dat of data) {
+                if (dat.type == 0) {
+                    var b = helper.makers.createGroup(elm, dat.name, dat.id)
+                    helper.load(dat.content, b.content)
+                }
+            }
+        }
+    }
+    const tasks = document.getElementById('tasks');
+    const mainInput = document.getElementById("m-i")
+    document.addEventListener("click", (ev)=>{
+        console.log(ev.target)
+        if (ev.target.parentElement.parentElement == tasks) {
+            console.log("Hi", mainInput.value)
+        }
+    })
+
+    // 0: Group
+    // 1: Task
+    const data = [
+        { type: 0, name: "Test",id: "abc1", content: [ { type:0, name: "Test2", id: "abc3", content: [{ type:0, name: "Test4", id: "abc4"}]} ] }
+    ]
+
+    helper.load(data)
+</script>
 
 </html>
